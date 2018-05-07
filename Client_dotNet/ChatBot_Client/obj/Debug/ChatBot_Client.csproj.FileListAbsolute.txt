@@ -1,0 +1,48 @@
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\bin\Debug\ChatBot_Client.exe.config
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\bin\Debug\ChatBot_Client.exe
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\bin\Debug\ChatBot_Client.pdb
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.csprojResolveAssemblyReference.cache
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\MainWindow.g.cs
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\SendButton.g.cs
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\App.g.cs
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client_MarkupCompile.cache
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client_MarkupCompile.lref
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\MainWindow.baml
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\SendButton.baml
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.g.resources
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.Properties.Resources.resources
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.GenerateResource.Cache
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.CoreCompileInputs.cache
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.exe
+d:\Dokumenty\Visual Studio 2017\Projects\ChatBot_Client\ChatBot_Client\obj\Debug\ChatBot_Client.pdb
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\bin\Debug\ChatBot_Client.exe.config
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\bin\Debug\ChatBot_Client.exe
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\bin\Debug\ChatBot_Client.pdb
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\MainWindow.g.cs
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\App.g.cs
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client_MarkupCompile.cache
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client_MarkupCompile.lref
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\MainWindow.baml
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.g.resources
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.Properties.Resources.resources
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.GenerateResource.cache
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.CoreCompileInputs.cache
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.exe
+D:\Projekty\Chat_Bot\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.pdb
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\bin\Debug\ChatBot_Client.exe.config
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\bin\Debug\ChatBot_Client.exe
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\bin\Debug\ChatBot_Client.pdb
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.csprojResolveAssemblyReference.cache
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\MainWindow.g.cs
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\App.g.cs
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client_MarkupCompile.cache
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client_MarkupCompile.lref
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\MainWindow.baml
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.g.resources
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.Properties.Resources.resources
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.GenerateResource.Cache
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.exe
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\obj\Debug\ChatBot_Client.pdb
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bartek\Documents\Projekty\DotNet\ChatBotProject\film_chat_bot\Client\ChatBot_Client\bin\Debug\Newtonsoft.Json.xml
