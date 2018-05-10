@@ -36,7 +36,19 @@
                         </Style>
                     </TextBlock.Style>
                 </TextBlock>
-                <Button Command="{Binding Path=}">
+                <Button Command="{Binding Path=OpenImageInFullScaleCommand}">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=ImageUri}" Value="">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=Sended}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
                     <Image>
                         <Image.Style>
                             <Style TargetType="Image">

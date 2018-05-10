@@ -18,13 +18,13 @@ namespace ChatBot_Client
 
         public ICommand OpenImageInFullScaleCommand
         {
-            get => new CommandHandler(new Action<ImageSource>(OpenImageInFullScale,ImageData), ImageData != null);
+            get => new CommandHandler(OpenImageInFullScale,ImageData, ImageData != null);
         }
 
         public void OpenImageInFullScale(ImageSource image)
         {
             var window = new ImageViewWindow();
-            window.Image.Source = image;
+            window.Image.Source = ImageData;
             window.Show();
         }
 

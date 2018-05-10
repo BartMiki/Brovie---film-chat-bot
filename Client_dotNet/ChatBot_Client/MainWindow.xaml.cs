@@ -27,7 +27,7 @@ namespace ChatBot_Client
         {
             if (MessageBox.Text != string.Empty)
             {
-                AddToMessages(new ChatMessage() { MessageText = MessageBox.Text, Sended = "False" });
+                AddToMessages(new ChatMessage() { MessageText = MessageBox.Text, Sended = "True" });
             }
         }
 

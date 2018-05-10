@@ -82,3 +82,8 @@ D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBo
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.pdb
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.csprojResolveAssemblyReference.cache
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\ColorsScheme.baml
+C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\ColorsScheme.baml
+C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\OtherStyles.baml
+C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ImageViewWindow.g.cs
+C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ImageViewWindow.baml
+C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\ChatMessageTemplate.baml

@@ -8,8 +8,9 @@ namespace ChatBot_Client
     {
         private Action<ImageSource> _action;
         private bool _canExecute;
+        private ImageSource _imageSource;
 
-        public CommandHandler(Action<ImageSource> action, bool canExecute)
+        public CommandHandler(Action<ImageSource> action, ImageSource imageSource, bool canExecute)
         {
             _action = action;
             _canExecute = canExecute;
@@ -17,7 +18,7 @@ namespace ChatBot_Client
 
         public bool CanExecute(object parameter) => _canExecute;
 
-        public void Execute(object parameter) => _action((ImageSource) parameter);
+        public void Execute(object parameter) => _action(_imageSource);
 
         public event EventHandler CanExecuteChanged;
     }
