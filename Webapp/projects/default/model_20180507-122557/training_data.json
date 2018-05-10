@@ -1,0 +1,412 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "howdy"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "film_search",
+        "text": "i'm looking for a film to see"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 25,
+            "value": "comedy",
+            "entity": "genres"
+          }
+        ],
+        "text": "I am looking for a comedy film. "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "comedy",
+            "entity": "genres"
+          }
+        ],
+        "text": "show me comedy films. "
+      },
+      {
+        "intent": "affirm",
+        "text": "yes"
+      },
+      {
+        "intent": "affirm",
+        "text": "yep"
+      },
+      {
+        "intent": "affirm",
+        "text": "yeah"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 10,
+            "end": 15,
+            "value": "crime",
+            "entity": "genres"
+          }
+        ],
+        "text": "show me a crime film with Tom Hanks."
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "good bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "stop"
+      },
+      {
+        "intent": "goodbye",
+        "text": "end"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 20,
+            "end": 29,
+            "value": "adventure",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for an adventure film."
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 16,
+            "value": "science fiction ",
+            "entity": "genres"
+          }
+        ],
+        "text": "science fiction film "
+      },
+      {
+        "intent": "affirm",
+        "text": "indeed"
+      },
+      {
+        "intent": "affirm",
+        "text": "that's right"
+      },
+      {
+        "intent": "affirm",
+        "text": "ok"
+      },
+      {
+        "intent": "affirm",
+        "text": "great"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 24,
+            "value": "comedy",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for an comedy film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "action",
+            "entity": "genres"
+          }
+        ],
+        "text": "i want action film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 23,
+            "value": "action",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for action film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "action",
+            "entity": "genres"
+          }
+        ],
+        "text": "i want action film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 26,
+            "value": "adventure",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for adventure film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 26,
+            "value": "animation",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for animation film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "crime",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for crime film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 29,
+            "value": "documentary ",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for documentary film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "drama",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for drama film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 23,
+            "value": "family",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for family film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "fantasy",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for fantasy film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "history",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for history film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 23,
+            "value": " horror",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for horror film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "music",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for music film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "mystery",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for mystery film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "romance",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for romance film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 32,
+            "value": "science fiction",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for science fiction film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 26,
+            "value": "thriller ",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for thriller film "
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "war",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for war film"
+      },
+      {
+        "intent": "film_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "western ",
+            "entity": "genres"
+          }
+        ],
+        "text": "i am looking for western film "
+      },
+      {
+        "intent": "new_search",
+        "text": "give me something else "
+      },
+      {
+        "intent": "new_search",
+        "text": "next option "
+      },
+      {
+        "intent": "new_search",
+        "text": "more"
+      },
+      {
+        "intent": "new_search",
+        "text": "i would like other film"
+      },
+      {
+        "intent": "popular_film",
+        "text": "give me popular film "
+      },
+      {
+        "intent": "popular_film",
+        "text": "popular movies"
+      },
+      {
+        "intent": "popular_film",
+        "text": "most popular film"
+      },
+      {
+        "intent": "popular_film",
+        "text": "hot film "
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}
