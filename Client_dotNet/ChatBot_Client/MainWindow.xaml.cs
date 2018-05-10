@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Windows;
@@ -14,7 +15,7 @@ namespace ChatBot_Client
     {
         readonly ObservableCollection<Message> _messages = new ObservableCollection<Message>();
         private static readonly HttpClient client = new HttpClient();
-        private static readonly string apiUrl = "";
+        private static readonly string apiUrl = "192.168.43.117:5000/do";
 
         public MainWindow()
         {
@@ -43,26 +44,43 @@ namespace ChatBot_Client
             _messages.Add(message);
             MessageBox.Text = string.Empty;
 
-            string response = PostMessage(new JsonMessage() {respond = message.MessageText});
-            _messages.Add(new Message(){MessageText = response,Sended = "Received"});
+            var response = PostMessage(new JsonMessage() {respond = message.MessageText});
+            _messages.Add(response);
 
             int lastMessageIndex = MessagesListBox.Items.Count - 1;
             MessagesListBox.ScrollIntoView(MessagesListBox.Items[lastMessageIndex]);
         }
 
-        private string PostMessage(JsonMessage jsonMessage)
+        private Message PostMessage(JsonMessage jsonMessage)
         {
             string message = JsonConvert.SerializeObject(jsonMessage);
-            var response = client.PostAsync(
-                apiUrl,
-                new StringContent(message, Encoding.UTF8, "application/json")
-                );
 
-            return response
-                .Result
-                .Content
-                .ReadAsStringAsync()
-                .Result;
+            //_messages.Add(new Message(){MessageText = message, Sended = "True"});
+
+            UriBuilder uriBuilder = new UriBuilder();
+            uriBuilder.Host = "192.168.43.117";
+            uriBuilder.Port = 5000;
+            uriBuilder.Path = "do";
+            uriBuilder.Scheme = "http";
+
+            var response = client.PostAsync(
+                uriBuilder.Uri,
+                new StringContent(message, Encoding.UTF8)
+                ).Result;
+
+            var json = @response.Content.ReadAsStringAsync().Result;
+            json = json.Replace("\"", "'");
+            //json =
+            //    @"{'respond': 'Los olvidados is a great film!', 'path': 'https://image.tmdb.org/t/p/w500//ufyPovbgRKlKTWrlzDFgULfgfyi.jpg'}";
+            var jsonResponse = JsonConvert.DeserializeObject<JsonResponse>(json);
+
+            Message result = new Message();
+            result.Sended = "Received";
+            result.MessageText = jsonResponse.respond;
+            result.ImageUri = new Uri(jsonResponse.path, UriKind.Absolute);
+            result.DownloadImageData();
+
+            return result;
         }
     }
 }

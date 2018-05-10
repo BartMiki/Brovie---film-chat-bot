@@ -41,21 +41,36 @@
                         </Style.Triggers>
                     </Style>
                 </Border.Style>
-                <TextBlock 
-                    Text="{Binding Path=MessageText}">
-                    <TextBlock.Style>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextWrapping" Value="Wrap"/>
-                            <Setter Property="MaxWidth" Value="220"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=Sended}" Value="True">
-                                    <Setter Property="Foreground" Value="White"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>
-                </TextBlock>
+                <StackPanel>
+                    <TextBlock 
+                        Text="{Binding Path=MessageText}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="MaxWidth" Value="220"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=Sended}" Value="True">
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <Image>
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="MaxWidth" Value="210"/>
+                                <Setter Property="Source" Value="{Binding ImageData}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=ImageUri}" Value="">
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </StackPanel>
             </Border>
         </DataTemplate>
     </Window.Resources>
