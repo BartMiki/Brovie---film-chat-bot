@@ -1,15 +1,32 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace ChatBot_Client
 {
-    public class Message
+    public class ChatMessage
     {
         public string MessageText { get; set; }
         public string Sended { get; set; }
         public Uri ImageUri { get; set; }
         public ImageSource ImageData { get; set; }
+
+        private ICommand _openImageInFullScaleCommand;
+
+        public ICommand OpenImageInFullScaleCommand
+        {
+            get => new CommandHandler(new Action<ImageSource>(OpenImageInFullScale,ImageData), ImageData != null);
+        }
+
+        public void OpenImageInFullScale(ImageSource image)
+        {
+            var window = new ImageViewWindow();
+            window.Image.Source = image;
+            window.Show();
+        }
 
         public void DownloadImageData()
         {

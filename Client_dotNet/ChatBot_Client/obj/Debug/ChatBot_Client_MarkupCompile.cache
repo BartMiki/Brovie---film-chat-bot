@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\
+D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\
 ChatBot_Client
 none
 false
 DEBUG;TRACE
-C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\App.xaml
-11151548125
+D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\App.xaml
+4-719027538
 
-81512788232
-14-197297991
-MainWindow.xaml;
+8-844472358
+141181275229
+MainWindow.xaml;WpfResources\ChatMessageTemplate.xaml;WpfResources\ColorsScheme.xaml;WpfResources\OtherStyles.xaml;
 
 False
 

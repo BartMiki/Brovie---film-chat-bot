@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:chatBotClient="clr-namespace:ChatBot_Client">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ColorsScheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="MessageTemplate" DataType="chatBotClient:ChatMessage">
+        <Border CornerRadius="8">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
+                    <Setter Property="Padding" Value="10,5"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Sended}" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ColorBrush}"/>
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <StackPanel>
+                <TextBlock 
+                        Text="{Binding Path=MessageText}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                            <Setter Property="MaxWidth" Value="220"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=Sended}" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource FontBrush}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <Button Command="{Binding Path=}">
+                    <Image>
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="MaxWidth" Value="210"/>
+                                <Setter Property="Source" Value="{Binding ImageData}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=ImageUri}" Value="">
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Button>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

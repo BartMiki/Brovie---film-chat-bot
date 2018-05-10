@@ -13,7 +13,7 @@ namespace ChatBot_Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly ObservableCollection<Message> _messages = new ObservableCollection<Message>();
+        readonly ObservableCollection<ChatMessage> _messages = new ObservableCollection<ChatMessage>();
         private static readonly HttpClient client = new HttpClient();
         private static readonly string apiUrl = "192.168.43.117:5000/do";
 
@@ -27,7 +27,7 @@ namespace ChatBot_Client
         {
             if (MessageBox.Text != string.Empty)
             {
-                AddToMessages(new Message() { MessageText = MessageBox.Text, Sended = "False" });
+                AddToMessages(new ChatMessage() { MessageText = MessageBox.Text, Sended = "False" });
             }
         }
 
@@ -35,23 +35,23 @@ namespace ChatBot_Client
         {
             if (e.Key == Key.Enter && MessageBox.Text != string.Empty)
             {
-                AddToMessages(new Message() { MessageText = MessageBox.Text, Sended = "True" });
+                AddToMessages(new ChatMessage() { MessageText = MessageBox.Text, Sended = "True" });
             }
         }
 
-        private void AddToMessages(Message message)
+        private void AddToMessages(ChatMessage chatMessage)
         {
-            _messages.Add(message);
+            _messages.Add(chatMessage);
             MessageBox.Text = string.Empty;
 
-            var response = PostMessage(new JsonMessage() {respond = message.MessageText});
+            var response = PostMessage(new JsonMessage() {respond = chatMessage.MessageText});
             _messages.Add(response);
 
             int lastMessageIndex = MessagesListBox.Items.Count - 1;
             MessagesListBox.ScrollIntoView(MessagesListBox.Items[lastMessageIndex]);
         }
 
-        private Message PostMessage(JsonMessage jsonMessage)
+        private ChatMessage PostMessage(JsonMessage jsonMessage)
         {
             string message = JsonConvert.SerializeObject(jsonMessage);
 
@@ -63,18 +63,18 @@ namespace ChatBot_Client
             uriBuilder.Path = "do";
             uriBuilder.Scheme = "http";
 
-            var response = client.PostAsync(
-                uriBuilder.Uri,
-                new StringContent(message, Encoding.UTF8)
-                ).Result;
+            //var response = client.PostAsync(
+            //    uriBuilder.Uri,
+            //    new StringContent(message, Encoding.UTF8)
+            //    ).Result;
 
-            var json = @response.Content.ReadAsStringAsync().Result;
-            json = json.Replace("\"", "'");
-            //json =
-            //    @"{'respond': 'Los olvidados is a great film!', 'path': 'https://image.tmdb.org/t/p/w500//ufyPovbgRKlKTWrlzDFgULfgfyi.jpg'}";
+            //var json = @response.Content.ReadAsStringAsync().Result;
+            //json = json.Replace("\"", "'");
+            var json =
+                @"{'respond': 'Los olvidados is a great film!', 'path': 'https://image.tmdb.org/t/p/w500//ufyPovbgRKlKTWrlzDFgULfgfyi.jpg'}";
             var jsonResponse = JsonConvert.DeserializeObject<JsonResponse>(json);
 
-            Message result = new Message();
+            ChatMessage result = new ChatMessage();
             result.Sended = "Received";
             result.MessageText = jsonResponse.respond;
             result.ImageUri = new Uri(jsonResponse.path, UriKind.Absolute);
