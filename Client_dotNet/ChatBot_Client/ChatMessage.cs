@@ -4,31 +4,31 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Newtonsoft.Json;
 
 namespace ChatBot_Client
 {
+    public enum MessageStatus { Sended, Received}
+
     public class ChatMessage
     {
-        public string MessageText { get; set; }
-        public string Sended { get; set; }
-        public Uri ImageUri { get; set; }
-        public ImageSource ImageData { get; set; }
+        public string MessageText { get; private set; }
+        public MessageStatus Status { get; private set; }
+        public bool HasImage { get; private set; }
+        public Uri ImageUri { get; private set; }
+        public ImageSource Image { get; private set; }
 
-        private ICommand _openImageInFullScaleCommand;
+        public ICommand OpenImageInFullScaleCommand 
+            => new CommandHandler(OpenImageInFullScale, HasImage);
 
-        public ICommand OpenImageInFullScaleCommand
-        {
-            get => new CommandHandler(OpenImageInFullScale,ImageData, ImageData != null);
-        }
-
-        public void OpenImageInFullScale(ImageSource image)
+        public void OpenImageInFullScale()
         {
             var window = new ImageViewWindow();
-            window.Image.Source = ImageData;
+            window.Image.Source = Image;
             window.Show();
         }
 
-        public void DownloadImageData()
+        public void DownloadImage()
         {
             if (ImageUri != null)
             {
@@ -37,8 +37,54 @@ namespace ChatBot_Client
                 bitmap.UriSource = ImageUri;
                 bitmap.EndInit();
 
-                ImageData = bitmap;
+                Image = bitmap;
             }
         }
+
+        private class JsonToSend
+        {
+            public string respond { get; set; }
+        }
+
+        public string GetJsonToSend()
+        {
+            return JsonConvert.SerializeObject(new JsonToSend() { respond = MessageText });
+        }
+
+        private ChatMessage(){ HasImage = false; }
+
+        public class ChatMessageBulder
+        {
+            private readonly ChatMessage _chatMessage;
+
+            public ChatMessageBulder()
+            {
+                _chatMessage = new ChatMessage();
+            }
+
+            public ChatMessageBulder AddMessage(string message)
+            {
+                _chatMessage.MessageText = message;
+                return this;
+            }
+
+            public ChatMessageBulder AddMessageStatus(MessageStatus status)
+            {
+                _chatMessage.Status = status;
+                return this;
+            }
+
+            public ChatMessageBulder AddImageUri(Uri uri)
+            {
+                _chatMessage.ImageUri = uri;
+                _chatMessage.HasImage = true;
+                return this;
+            }
+
+            public ChatMessage ToChatMessage()
+            {
+                return _chatMessage;
+            }
+        }         
     }
 }

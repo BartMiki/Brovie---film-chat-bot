@@ -6,11 +6,10 @@ namespace ChatBot_Client
 {
     public class CommandHandler : ICommand
     {
-        private Action<ImageSource> _action;
-        private bool _canExecute;
-        private ImageSource _imageSource;
+        private readonly Action _action;
+        private readonly bool _canExecute;
 
-        public CommandHandler(Action<ImageSource> action, ImageSource imageSource, bool canExecute)
+        public CommandHandler(Action action, bool canExecute)
         {
             _action = action;
             _canExecute = canExecute;
@@ -18,7 +17,7 @@ namespace ChatBot_Client
 
         public bool CanExecute(object parameter) => _canExecute;
 
-        public void Execute(object parameter) => _action(_imageSource);
+        public void Execute(object parameter) => _action();
 
         public event EventHandler CanExecuteChanged;
     }

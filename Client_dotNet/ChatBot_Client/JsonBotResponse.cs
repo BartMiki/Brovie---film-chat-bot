@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatBot_Client
 {
-    public class JsonResponse
+    public class JsonBotResponse
     {
         public string respond { get; set; }
         public string path { get; set; }
