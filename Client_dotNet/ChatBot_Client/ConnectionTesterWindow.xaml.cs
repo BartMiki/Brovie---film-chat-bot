@@ -24,13 +24,15 @@ namespace ChatBot_Client
     public partial class ConnectionTesterWindow : Window
     {
         private readonly ObservableConcurrentCollection<string> consoleHistory;
-        private readonly DispatcherTimer timer;
+        private readonly DispatcherTimer totalTimer;
+        private readonly DispatcherTimer milisecondTimer;
 
         public ConnectionTesterWindow()
         {
             InitializeComponent();
             consoleHistory = new ObservableConcurrentCollection<string>();
-            timer = new DispatcherTimer();
+            totalTimer = new DispatcherTimer();
+            milisecondTimer = new DispatcherTimer();
             ConsoleOutput.ItemsSource = consoleHistory;
         }
 
@@ -48,24 +50,46 @@ namespace ChatBot_Client
                 ThreadLocal<ConnectionTester> testingThread = new ThreadLocal<ConnectionTester>(
                     () => new ConnectionTester(connectionCount, timeRange, consoleHistory)
                     );
-                
-                Thread thread = new Thread( testingThread.Value.Test );
-                timer.Interval = TimeSpan.FromMilliseconds(timeRange);
-                Start.IsEnabled = false;
-                timer.Tick += TestFinishedEventHandler;
-                timer.Start();
+
+                Thread thread = new Thread(testingThread.Value.Test);
+                TimersSetup(timeRange);
                 thread.Start();
 
             }
             catch (Exception e)
             {
-                consoleHistory.AddFromEnumerable(new []{e.Message});
+                consoleHistory.AddFromEnumerable(new[] { e.Message });
             }
+        }
+
+        private void TimersSetup(int timeRange)
+        {
+            totalTimer.Interval = TimeSpan.FromMilliseconds(timeRange);
+            Start.IsEnabled = false;
+            totalTimer.Tick += TestFinishedEventHandler;
+
+            milisecondTimer.Interval = TimeSpan.FromMilliseconds(10);
+            ProgressBar.Visibility = Visibility.Visible;
+            ProgressBar.Maximum = timeRange;
+            ProgressBar.Value = 0;
+            milisecondTimer.Tick += ProgresBarUpdateEventHandler;
+
+            totalTimer.Start();
+            milisecondTimer.Start();
         }
 
         private void TestFinishedEventHandler(object sender, EventArgs e)
         {
             Start.IsEnabled = true;
+            ProgressBar.Visibility = Visibility.Hidden;
+            ProgressBar.Value = 0;
+            totalTimer.Stop();
+            milisecondTimer.Stop();
+        }
+
+        private void ProgresBarUpdateEventHandler(object sender, EventArgs e)
+        {
+            ProgressBar.Value += 10;
         }
 
         private int ParseTimeRangeInput()
@@ -87,7 +111,7 @@ namespace ChatBot_Client
                 return int.Parse(ConnectionCountInput.Text);
             }
             catch (Exception)
-            {            
+            {
                 throw new Exception("Connection count must be a positive integer");
             }
         }

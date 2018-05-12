@@ -26,7 +26,11 @@
                     HorizontalAlignment="Right"
                     Margin="2"
                     Padding="10,0"
-                    Click="StartButton_OnClick">Start</Button>
+                    Click="StartButton_OnClick"
+                    IsDefault="True">Start</Button>
+            <ProgressBar x:Name="ProgressBar"
+                         Margin="20,5"
+                         Visibility="Hidden"/>
         </DockPanel>
         <ListView
             x:Name="ConsoleOutput"
