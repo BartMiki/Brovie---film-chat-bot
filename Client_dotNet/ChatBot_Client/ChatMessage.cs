@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace ChatBot_Client
 {
-    public enum MessageStatus { Sended, Received}
+    public enum MessageStatus { Sended, Received, Error}
 
     public class ChatMessage
     {

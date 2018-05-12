@@ -80,7 +80,6 @@ D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBo
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.csproj.CopyComplete
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.exe
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.pdb
-D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.csprojResolveAssemblyReference.cache
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\ColorsScheme.baml
 C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\ColorsScheme.baml
 C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\OtherStyles.baml
@@ -88,6 +87,9 @@ C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_
 C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ImageViewWindow.baml
 C:\Users\Bartek\Documents\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\WpfResources\ChatMessageTemplate.baml
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ImageViewWindow.g.cs
-D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\bin\Debug\Newtonsoft.Json.xml
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ImageViewWindow.baml
 D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ConnectionTesterWindow.g.cs
+D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ConnectionTesterWindow.baml
+D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\obj\Debug\ChatBot_Client.csprojResolveAssemblyReference.cache
+D:\Projekty\Brovie---film-chat-bot\Client_dotNet\ChatBot_Client\bin\Debug\ParallelExtensionsExtras.dll

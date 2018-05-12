@@ -7,6 +7,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <local:MessageStatusToStringConverter x:Key="MessageStatusToStringConverter"/>
+    <local:BoolToStringConverter x:Key="BoolToStringConverter"/>
 
     <DataTemplate x:Key="MessageTemplate" DataType="chatBotClient:ChatMessage">
         <Border CornerRadius="8">
@@ -20,6 +21,9 @@
                             <Setter Property="Background" Value="{DynamicResource ColorBrush}"/>
                             <Setter Property="HorizontalAlignment" Value="Right"/>
                         </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=Status, Converter={StaticResource MessageStatusToStringConverter}}" Value="Error">
+                            <Setter Property="Background" Value="{StaticResource ErrorBrush}"/>
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Border.Style>
@@ -32,7 +36,10 @@
                             <Setter Property="MaxWidth" Value="220"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=Status}" Value="True">
+                                <DataTrigger Binding="{Binding Path=Status, Converter={StaticResource MessageStatusToStringConverter}}" Value="Sended">
+                                    <Setter Property="Foreground" Value="{DynamicResource FontBrush}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=Status, Converter={StaticResource MessageStatusToStringConverter}}" Value="Error">
                                     <Setter Property="Foreground" Value="{DynamicResource FontBrush}"/>
                                 </DataTrigger>
                             </Style.Triggers>
@@ -44,11 +51,14 @@
                         <Style TargetType="Button">
                             <Setter Property="BorderThickness" Value="0"/>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=ImageUri}" Value="">
+                                <DataTrigger Binding="{Binding Path=HasImage, Converter={StaticResource BoolToStringConverter}}" Value="False">
                                     <Setter Property="Visibility" Value="Collapsed"/>
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status, Converter={StaticResource MessageStatusToStringConverter}}" Value="Sended">
-                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=Status, Converter={StaticResource MessageStatusToStringConverter}}" Value="Error">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
@@ -59,7 +69,7 @@
                                 <Setter Property="MaxWidth" Value="210"/>
                                 <Setter Property="Source" Value="{Binding Image}"/>
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=ImageUri}" Value="">
+                                    <DataTrigger Binding="{Binding Path=HasImage, Converter={StaticResource BoolToStringConverter}}" Value="False">
                                         <Setter Property="Visibility" Value="Hidden"/>
                                     </DataTrigger>
                                 </Style.Triggers>

@@ -14,12 +14,18 @@ namespace ChatBot_Client
     public partial class MainWindow : Window
     {
         readonly ObservableCollection<ChatMessage> _messages = new ObservableCollection<ChatMessage>();
-        private static readonly ChatBotClient Client = new ChatBotClient("brovie-film-chatbot.herokuapp.com","do");
+        private static readonly ChatBotClient Client = 
+            new ChatBotClient("brovie-film-chatbot.herokuapp.com","do");
 
         public MainWindow()
         {
             DataContext = _messages;
             InitializeComponent();
+        }
+
+        ~MainWindow()
+        {
+            Client.Dispose();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -28,6 +34,12 @@ namespace ChatBot_Client
             {
                 AddToMessages(ChatMessageFactory.ChatMessageToSend(MessageBox.Text));
             }
+        }
+
+        private void Menu_ConnectionTester_OnClick(object sender, RoutedEventArgs e)
+        {
+            var window = new ConnectionTesterWindow();
+            window.Show();
         }
 
         private void MainWindow_OnKeyDown(object sender, KeyEventArgs e)

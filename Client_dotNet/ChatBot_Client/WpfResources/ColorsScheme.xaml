@@ -5,4 +5,5 @@
     <media:Brush x:Key="ColorBrush">DodgerBlue</media:Brush>
     <media:Brush x:Key="HighlightBrush">SkyBlue</media:Brush>
     <media:Brush x:Key="FontBrush">White</media:Brush>
+    <media:Brush x:Key="ErrorBrush">Red</media:Brush>
 </ResourceDictionary>

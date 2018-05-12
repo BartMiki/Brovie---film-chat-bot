@@ -16,6 +16,14 @@
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top" >
+            <MenuItem Header="Addons">
+                <MenuItem Header="Connection Tester" Click="Menu_ConnectionTester_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="About"/>
+            </MenuItem>
+        </Menu>
         <StackPanel DockPanel.Dock="Bottom" Style="{StaticResource StackPanelStyle}">
             <DockPanel Margin="2">
                 <Button 

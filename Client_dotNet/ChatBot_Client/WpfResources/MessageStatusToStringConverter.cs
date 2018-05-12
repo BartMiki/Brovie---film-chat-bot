@@ -12,7 +12,7 @@ namespace ChatBot_Client.WpfResources
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            MessageStatus status = (MessageStatus?) value ?? MessageStatus.Sended;
+            MessageStatus status = (MessageStatus?) value ?? MessageStatus.Error;
 
             return Enum.GetName(typeof(MessageStatus), status);
 
@@ -22,7 +22,7 @@ namespace ChatBot_Client.WpfResources
         {
             MessageStatus message;
             if (!Enum.TryParse((string) value, out message))
-                message = MessageStatus.Sended;
+                message = MessageStatus.Error;
 
             return message;
         }

@@ -27,22 +27,30 @@ namespace ChatBot_Client
         {
             try
             {
-                return postMessage(toSend);
+                return InnerPostMessage(toSend);
             }
             catch (Exception)
             {
-                throw new Exception("");
+                return ErrorMessage("Ups something went wrong.");
             }
         }
 
+        private ChatMessage ErrorMessage(string message)
+        {
+            return new ChatMessage.ChatMessageBulder()
+                .AddMessage(message)
+                .AddMessageStatus(MessageStatus.Error)
+                .ToChatMessage();
+        }
 
-        private ChatMessage postMessage(ChatMessage toSend)
+        private ChatMessage InnerPostMessage(ChatMessage toSend)
         {
             var botResponse = PostAsync(
                 Uri, new StringContent(toSend.GetJsonToSend(), Encoding.UTF8)
             ).Result;
 
-            string json = botResponse.Content.ReadAsStringAsync().Result;
+            byte[] bytes = botResponse.Content.ReadAsByteArrayAsync().Result;
+            string json = Encoding.UTF8.GetString(bytes);
             json = json
                 .Replace("\"{", "{")
                 .Replace("}\"", "}")

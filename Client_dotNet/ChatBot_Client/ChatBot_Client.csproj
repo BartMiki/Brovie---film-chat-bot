@@ -37,6 +37,9 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="ParallelExtensionsExtras, Version=1.2.3.0, Culture=neutral, PublicKeyToken=665f4d61f853b5a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\ParallelExtensionsExtras.1.2.0.0\lib\net40\ParallelExtensionsExtras.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,7 +61,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ChatMessageFactory.cs" />
-    <Compile Include="WpfResources\MessageStatusConverter.cs" />
+    <Compile Include="ConnectionTester.cs" />
+    <Compile Include="ConnectionTesterWindow.xaml.cs">
+      <DependentUpon>ConnectionTesterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfResources\BoolToStringConverter.cs" />
+    <Compile Include="WpfResources\MessageStatusToStringConverter.cs" />
+    <Page Include="ConnectionTesterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ImageViewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -19,6 +19,7 @@ namespace ChatBot_Client
 
         public static ChatMessage ChatMessageFromReceived(JsonBotResponse response)
         {
+
             var messageBuilder = new ChatMessage.ChatMessageBulder()
                 .AddMessage(response.respond)
                 .AddMessageStatus(MessageStatus.Received);
