@@ -15,7 +15,7 @@ namespace ChatBot_Client
     {
         readonly ObservableCollection<ChatMessage> _messages = new ObservableCollection<ChatMessage>();
         private static readonly ChatBotClient Client = 
-            new ChatBotClient("brovie-film-chatbot.herokuapp.com","do");
+            new ChatBotClient("brovie---film-chat-bot.herokuapp.com", "do");
 
         public MainWindow()
         {

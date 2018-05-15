@@ -33,7 +33,7 @@ namespace ChatBot_Client
 
                 Thread.Sleep(random.Next(_timeRange));
 
-                using (ChatBotClient client = new ChatBotClient("brovie-film-chatbot.herokuapp.com", "do"))
+                using (ChatBotClient client = new ChatBotClient("brovie---film-chat-bot.herokuapp.com", "do"))
                 {
                     ChatMessage message = ChatMessageFactory.ChatMessageToSend(sender.Value);
                     ChatMessage received = client.PostMessage(message);
