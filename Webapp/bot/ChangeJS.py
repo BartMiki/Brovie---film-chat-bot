@@ -1,27 +1,33 @@
-from bot.Rasa_nlu import Rasa_NLU
+from bot.Bot import Bot
+from bot.api_ai import find_respond
 import json
-from functools import wraps
-import warnings
 
-
-def ignore_warnings(f):
-    @wraps(f)
-    def inner(*args, **kwargs):
-        with warnings.catch_warnings(record=True) as w:
-            warnings.simplefilter("ignore")
-            response = f(*args, **kwargs)
-        return response
-    return inner
 
 class Change(object):
 
-    @ignore_warnings
     def __init__(self):
-        self.rasa_nlp = Rasa_NLU()
+        self.Bot = Bot()
 
-
-    @ignore_warnings
     def respond(self, jso):
+
         js = json.loads(jso)
-        result = self.rasa_nlp.find_respond(js['respond'])
+        action, film, respond = find_respond(js['respond'])
+        if action == 'film':
+            result = self.Bot.choose_film_by_genres(film, respond)
+        elif action == 'hello' or action == 'bye':
+            result = self.Bot.greetings(respond)
+        else:
+            result = self.Bot.error()
+
         return result
+
+
+# change = Change()
+# jso = {
+#
+#   "respond": "Bye"
+# }
+# result = change.respond(jso)
+# print(result)
+
+
